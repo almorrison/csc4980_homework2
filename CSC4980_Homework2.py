@@ -6,10 +6,11 @@ salt = ""
 
 # used for determining the salt and hash words. if salt has some value (not ""), it concatenates salt to password value before hashing.
 def hashCracker(hashInput):
+	intialTime = time.time()
 	passwordFile = open("C:\\Users\\Aaron M\\Documents\\10-million-password-list-top-1000000.txt", "r", encoding = "utf-8")
 	tryCount = 0
 
-	#iterates through password file
+	#iterates through password file 
 	for password in passwordFile:
 		password = password.strip()
 
@@ -24,14 +25,13 @@ def hashCracker(hashInput):
 			print("\nInput hash:", hashInput)
 			print("Compared hash:", passwordHash)
 			print("Total number of tries:", tryCount)
+			print("Total time taken: %s seconds" %(time.time() - intialTime))
 			return password
 		else:
 			tryCount += 1
 			print("\nInput hash:", hashInput)
 			print("Compared hash:", passwordHash)
 			print("Number of tries:", tryCount)
-
-intialTime = time.time()
 
 #get salt
 saltInput = input("Input salt (press enter to skip): ")
@@ -43,5 +43,3 @@ if(saltInput != ""):
 hashInput = input("Input hash (press enter to terminate): ")
 if(hashInput != ""):
 	print("\nPASSWORD FOUND:", hashCracker(hashInput))
-
-print("Total time taken: %s seconds" %(time.time() - intialTime))
