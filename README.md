@@ -1,5 +1,5 @@
 # csc4980_homework2
-Python SHA1 cracking program
+Python SHA1 cracking program\
 Aaron Morrison
 
 This program prompts user for a salt value and a hash value. If salt value is not applicable, the program iterates through the password list (https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt), hashing each password and comparing it with the input hash value. Once a matching password is found, it is printed to the screen. If salt value is applicable, the program iterates through the password list, hashing the passwords and looking for a match. Once the salt word is found, the program then iterates through the list again, this time hashing each password with the salt word concatenated in front and looking for a matching hash value. Once it is found, it is printed to the screen.
