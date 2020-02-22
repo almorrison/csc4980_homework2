@@ -2,6 +2,8 @@
 Python SHA1 cracking program\
 Aaron Morrison
 
+NOTE: You should change the file path in the hashCracker function to whatever the path is on your pc.
+
 This program prompts user for a salt value and a hash value. If salt value is not applicable, the program iterates through the password list (https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt), hashing each password and comparing it with the input hash value. Once a matching password is found, it is printed to the screen. If salt value is applicable, the program iterates through the password list, hashing the passwords and looking for a match. Once the salt word is found, the program then iterates through the list again, this time hashing each password with the salt word concatenated in front and looking for a matching hash value. Once it is found, it is printed to the screen.
 
 For the testing program hash (b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3), the solution is "letmein".
